@@ -26,7 +26,7 @@ The guesser has a limited number of guesses. Each correct guess reveals all occu
 - [] any tools can be used within reason (no game frameworks)
 - [] Yur program must retrieve a dictionary list of words from the word dictionary REST API provided (see attached documentation)
 
-### Extension `0ptional`
+### Extension [optional]
 
 - [] track users/scores over time and show a leader board
 - [] add support for guessing full words instead of just letters one at a time, and count those against the guesses total
