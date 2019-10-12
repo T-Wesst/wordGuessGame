@@ -1,7 +1,6 @@
 @media only screen and (max-width: 600px) {
   h1 {
     font-size: 16px;
-    font-family: 'fira code';
     margin: 0px;
   }
 
@@ -14,11 +13,29 @@
     justify-content: center;
   }
 }
+@media only screen and (min-width: 600px) {
+  div.animate-guess {
+    justify-content: space-evenly;
+  }
+  div.card {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  div.box-container {
+    justify-content: space-around;
+  }
+  div.card {
+    font-size: 24px;
+  }
+}
 
 /* classes */
 .game-background {
   background-color: #ebebeb;
   padding: 10px;
+  font-family: 'fira code';
 }
 
 .game-container {
@@ -36,10 +53,10 @@
 
 .card {
   margin-bottom: 10px;
-  background: linear-gradient(to right, #cfdef3, #e0eafc);
+  background: linear-gradient(to right, #d2d6db, #e8e9eb);
   padding: 15px;
   border: solid 2px black;
-  border-radius: 2px;
+  border-radius: 5px;
 }
 
 .card-title {
@@ -51,9 +68,9 @@
   justify-content: center;
 }
 
-.box {
+/* .box {
   width: 100%;
-}
+} */
 .box-container {
   display: flex;
   justify-content: space-between;
