@@ -7,7 +7,6 @@
 
   div.card {
     font-size: 11px;
-    box-shadow: 3px 5px 1px 0px rgba(0, 0, 0, 0.75);
   }
 
   div.animate-guess {
@@ -24,9 +23,11 @@
 
 .game-container {
   margin: 0 auto;
+  box-shadow: 0px 0px 4px 1px rgb(41, 38, 38);
   min-height: 100vh;
   border-radius: 5px;
   border: 2px solid black;
+  background: linear-gradient(to right, #f9d423, #ff4e50);
 }
 
 .content {
@@ -34,8 +35,8 @@
 }
 
 .card {
-  background-color: #fff;
   margin-bottom: 10px;
+  background: linear-gradient(to right, #cfdef3, #e0eafc);
   padding: 15px;
   border: solid 2px black;
   border-radius: 2px;
