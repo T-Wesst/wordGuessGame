@@ -1,3 +1,4 @@
+/* MEDIA QUERIES */
 @media only screen and (max-width: 600px) {
   h1 {
     font-size: 16px;
@@ -17,25 +18,26 @@
   div.animate-guess {
     justify-content: space-evenly;
   }
-  div.card {
-    font-size: 16px;
-  }
 }
 
 @media only screen and (min-width: 900px) {
   div.box-container {
     justify-content: space-around;
   }
-  div.card {
-    font-size: 24px;
+  div.game-container {
+    animation: slideFromLeft 1s ease-in;
   }
 }
 
-/* classes */
+/* CLASSES */
 .game-background {
   background-color: #ebebeb;
   padding: 10px;
   font-family: 'fira code';
+}
+
+.shake {
+  animation: shake 0.5s;
 }
 
 .game-container {
@@ -68,10 +70,43 @@
   justify-content: center;
 }
 
-/* .box {
+.box {
   width: 100%;
-} */
+}
 .box-container {
   display: flex;
   justify-content: space-between;
+}
+
+/* KEYFRAMES */
+@keyframes slideFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
 }
