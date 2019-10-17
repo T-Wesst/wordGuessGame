@@ -10,7 +10,19 @@
   let guessedLetters = [];
   let remainingGuesses = randomWord.length;
   let answer = new Array(randomWord.length).fill('_');
-  console.log(answer);
-  console.log(remainingGuesses);
-  console.log(randomWord);
+  updateUI();
+
+  // UI
+  function updateUI() {
+    console.log(randomWord, randomWord.length);
+    document.querySelector(
+      '#displayRemainingGuesses'
+    ).innerHTML = remainingGuesses;
+    document.querySelector('#displayWins').innerHTML = wins;
+    document.querySelector('#displayLosses').innerHTML = losses;
+    document.querySelector('#displayGuesses').innerHTML = guessedLetters.join(
+      ', '
+    );
+    document.querySelector('#displayWordToGuess').innerHTML = answer.join(' ');
+  }
 })();
