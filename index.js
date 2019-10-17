@@ -93,7 +93,9 @@
   // RESET GAME
   function reset() {
     // wait 3 seconds and reset variables
+    document.querySelector('#loading').classList.add('loader');
     setTimeout(function() {
+      document.querySelector('#loading').classList.remove('loader');
       guessedLetters = [];
       randomWord = arrWords[Math.floor(Math.random() * arrWords.length)];
       remainingGuesses = randomWord.length;
