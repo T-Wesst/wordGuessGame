@@ -21,6 +21,7 @@
       console.log(userInput);
       // if the game is over
       if (remainingGuesses === 0) {
+        alert('you lost');
         losses++;
         reset();
       } else {
@@ -41,6 +42,22 @@
       guessedLetters.push(char);
       // decrease remaining guesses
       remainingGuesses--;
+    }
+  }
+
+  function checkAnswer(word, char, answer) {
+    for (let i = 0; i < word.length; i++) {
+      // if the current index value = the char
+      if (word[i] === char) {
+        // reveal all occurences the character at index in answer
+        answer[i] = char;
+        // if game has no more underscores
+        if (!answer.includes('_')) {
+          wins++;
+          alert('you won');
+          reset();
+        }
+      }
     }
   }
 
