@@ -46,6 +46,12 @@
       guessedLetters.push(char);
       // decrease remaining guesses
       remainingGuesses--;
+    } else {
+      document.querySelector('div.game-background').classList.add('shake');
+      setTimeout(function() {
+        alert(`you've already tried that answer`);
+        document.querySelector('div.game-background').classList.remove('shake');
+      }, 1000);
     }
   }
   // CHECK ANSWER
@@ -61,6 +67,13 @@
           alert('you won');
           reset();
         }
+      } else {
+        document.querySelector('div.game-background').classList.add('shake');
+        setTimeout(function() {
+          document
+            .querySelector('div.game-background')
+            .classList.remove('shake');
+        }, 1000);
       }
     }
   }
