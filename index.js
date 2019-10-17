@@ -31,6 +31,18 @@
       alert('sorry, please enter a character between a-z');
     }
   };
+  // CHECK INPUT
+  function checkInput(word, char) {
+    // if guessedLetters array does not include character
+    if (!guessedLetters.includes(char)) {
+      // check answer
+      checkAnswer(word, char, answer);
+      // push the character into guessedLetters array
+      guessedLetters.push(char);
+      // decrease remaining guesses
+      remainingGuesses--;
+    }
+  }
 
   // UI
   function updateUI() {
@@ -47,6 +59,7 @@
   }
   // RESET GAME
   function reset() {
+    // wait 3 seconds and reset variables
     setTimeout(function() {
       guessedLetters = [];
       randomWord = arrWords[Math.floor(Math.random() * arrWords.length)];
