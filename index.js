@@ -10,6 +10,8 @@
   let guessedLetters = [];
   let remainingGuesses = randomWord.length;
   let answer = new Array(randomWord.length).fill('_');
+
+  // INITIAL DISPLAY
   updateUI();
 
   document.onkeydown = function(event) {
@@ -42,5 +44,15 @@
       ', '
     );
     document.querySelector('#displayWordToGuess').innerHTML = answer.join(' ');
+  }
+  // RESET GAME
+  function reset() {
+    setTimeout(function() {
+      guessedLetters = [];
+      randomWord = arrWords[Math.floor(Math.random() * arrWords.length)];
+      remainingGuesses = randomWord.length;
+      answer = new Array(randomWord.length).fill('_');
+      updateUI();
+    }, 3000);
   }
 })();
