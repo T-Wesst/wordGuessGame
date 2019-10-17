@@ -29,7 +29,11 @@
         updateUI();
       }
     } else {
-      alert('sorry, please enter a character between a-z');
+      document.querySelector('div.game-background').classList.add('shake');
+      setTimeout(function() {
+        alert('sorry, please enter a character between a-z');
+        document.querySelector('div.game-background').classList.remove('shake');
+      }, 1000);
     }
   };
   // CHECK INPUT
@@ -44,7 +48,7 @@
       remainingGuesses--;
     }
   }
-
+  // CHECK ANSWER
   function checkAnswer(word, char, answer) {
     for (let i = 0; i < word.length; i++) {
       // if the current index value = the char
@@ -60,7 +64,6 @@
       }
     }
   }
-
   // UI
   function updateUI() {
     console.log(randomWord, randomWord.length);
