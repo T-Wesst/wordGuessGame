@@ -10,6 +10,15 @@
   let guessedLetters = [];
   let remainingGuesses = randomWord.length;
   let answer = new Array(randomWord.length).fill('_');
+  let correctAudio = new Audio(
+    'https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/goodbell.mp3'
+  );
+  let winAudio = new Audio(
+    'https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/win.mp3'
+  );
+  let loseAudio = new Audio(
+    'https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/lose.mp3'
+  );
 
   // INITIAL DISPLAY
   updateUI();
@@ -22,6 +31,7 @@
       // if the game is over
       if (remainingGuesses === 0) {
         alert('you lost');
+        loseAudio.play();
         losses++;
         reset();
       } else {
@@ -59,11 +69,13 @@
     for (let i = 0; i < word.length; i++) {
       // if the current index value = the char
       if (word[i] === char) {
-        // reveal all occurences the character at index in answer
+        // reveal all occurrences the character at index in answer
         answer[i] = char;
+        correctAudio.play();
         // if game has no more underscores
         if (!answer.includes('_')) {
           wins++;
+          winAudio.play();
           alert('you won');
           reset();
         }
