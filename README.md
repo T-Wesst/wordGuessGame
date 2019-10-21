@@ -14,21 +14,21 @@ The guesser has a limited number of guesses. Each correct guess reveals all occu
 
 ### User Interface
 
-- [] display the length of the hidden word as a list of underscores: `_ _ _ _`
-- [] any type of UI is acceptable (CLI, mobile/web app)
-- [] occurrences of correct guesses are revealed meanwhile the remaining unknown letters are hidden
-- [] the number of guesses remaining is displayed
-- [] a list of incorrect guesses are displayed
+- [x] display the length of the hidden word as a list of underscores: `_ _ _ _`
+- [x] any type of UI is acceptable (CLI, mobile/web app)
+- [x] occurrences of correct guesses are revealed meanwhile the remaining unknown letters are hidden
+- [x] the number of guesses remaining is displayed
+- [x] a list of incorrect guesses are displayed
 
 ### Implementation
 
-- [] must retrieve a random word from a dictionary list API
-- [] any tools can be used within reason (no game frameworks)
-- [] Yur program must retrieve a dictionary list of words from the word dictionary REST API provided (see attached documentation)
+- [x] must retrieve a random word from a dictionary list API
+- [x] any tools can be used within reason (no game frameworks)
+- [x] Program must retrieve a dictionary list of words from the word dictionary REST API provided
 
 ### Extension [optional]
 
-- [] track users/scores over time and show a leader board
+- [x] track users/scores over time and show a leader board
 - [] add support for guessing full words instead of just letters one at a time, and count those against the guesses total
 - [] add support for phrases instead of just words, and numbers in addition to letters
 - [] create a diagram (that can be drawn with x amount of attempt) that gets filled in as the user guesses incorrectly
