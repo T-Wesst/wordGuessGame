@@ -67,13 +67,6 @@
           alert('you won');
           reset();
         }
-      } else {
-        document.querySelector('div.game-background').classList.add('shake');
-        setTimeout(function() {
-          document
-            .querySelector('div.game-background')
-            .classList.remove('shake');
-        }, 1000);
       }
     }
   }
