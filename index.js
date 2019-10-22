@@ -1,4 +1,5 @@
 (async () => {
+  let timeRemaining = 5;
   let url =
     'https://cors-anywhere.herokuapp.com/http://app.linkedin-reach.io/words';
   const { data } = await axios.get(url);
@@ -26,14 +27,11 @@
   document.onkeydown = function(event) {
     // if key pressed is within range from a-z
     if (event.keyCode >= 65 && event.keyCode <= 90) {
+      startTimer();
       let userInput = event.key.toLowerCase();
-      console.log(userInput);
       // if the game is over
       if (remainingGuesses === 0) {
-        alert('you lost');
-        loseAudio.play();
-        losses++;
-        reset();
+        lossGame();
       } else {
         checkInput(randomWord, userInput);
         updateUI();
@@ -46,16 +44,35 @@
       }, 1000);
     }
   };
+
+  function lossGame() {
+    alert('you lost');
+    loseAudio.play();
+    losses++;
+    reset();
+  }
+
+  function startTimer() {
+    let myInterval = setInterval(function() {
+      timeRemaining--;
+      document.querySelector('#time').innerHTML = timeRemaining;
+      if (timeRemaining === 0) {
+        clearInterval(myInterval);
+        lossGame();
+      }
+    }, 1000);
+  }
+
   // CHECK INPUT
   function checkInput(word, char) {
     // if guessedLetters array does not include character
     if (!guessedLetters.includes(char)) {
+      // decrease remaining guesses
+      remainingGuesses--;
       // check answer
       checkAnswer(word, char, answer);
       // push the character into guessedLetters array
       guessedLetters.push(char);
-      // decrease remaining guesses
-      remainingGuesses--;
     } else {
       document.querySelector('div.game-background').classList.add('shake');
       setTimeout(function() {
@@ -66,7 +83,8 @@
   }
   // CHECK ANSWER
   function checkAnswer(word, char, answer) {
-    for (let i = 0; i < word.length; i++) {
+    let T = word.length;
+    for (let i = 0; i < T; i++) {
       // if the current index value = the char
       if (word[i] === char) {
         // reveal all occurrences the character at index in answer
